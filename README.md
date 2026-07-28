@@ -7,10 +7,10 @@
 <p align="center">
   <a href="https://github.com/nousresearch/hermes-agent"><img src="https://img.shields.io/badge/Fork%20of-Hermes%20Agent-FFD700?style=for-the-badge" alt="Fork of Hermes Agent"></a>
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT">
-  <img src="https://img.shields.io/badge/Built%20by-GT%20Labs-blueviolet?style=for-the-badge" alt="Built by GT Labs">
+  <img src="https://img.shields.io/badge/Built%20by-Tirnel%20Labs-blueviolet?style=for-the-badge" alt="Built by Tirnel Labs">
 </p>
 
-**Atlas AI — el agente de IA auto-mejorable de GT Labs.** Crea skills a partir de la experiencia, las mejora durante el uso, persiste conocimiento por su cuenta, busca en sus propias conversaciones pasadas y construye un modelo de quién sos a través de las sesiones. Corre en un VPS de $5, un cluster de GPU o infraestructura serverless. No está atado a tu laptop — le hablás desde Telegram, Discord, Slack, WhatsApp o Signal mientras trabaja en una VM.
+**Atlas AI — el agente de IA auto-mejorable de Tirnel Labs.** Crea skills a partir de la experiencia, las mejora durante el uso, persiste conocimiento por su cuenta, busca en sus propias conversaciones pasadas y construye un modelo de quién sos a través de las sesiones. Corre en un VPS de $5, un cluster de GPU o infraestructura serverless. No está atado a tu laptop — le hablás desde Telegram, Discord, Slack, WhatsApp o Signal mientras trabaja en una VM.
 
 Usás el modelo que quieras — OpenRouter, OpenAI, tu propio endpoint y muchos otros. Cambiás con `atlas model` — sin tocar código, sin lock-in.
 
@@ -125,7 +125,7 @@ Atlas usa el directorio `~/.hermes/` para su estado (config, sesiones, skills, m
 
 ## Fork y upstream
 
-Atlas AI es un fork de **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** (Nous Research, licencia MIT), rebrandeado y mantenido por **GT Labs**.
+Atlas AI es un fork de **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** (Nous Research, licencia MIT), rebrandeado y mantenido por **Tirnel Labs** — GT y Luis.
 
 - Traer mejoras del upstream: `git pull upstream main`
 - La documentación técnica del motor (arquitectura, tools, MCP, cron) sigue vigente en el proyecto original mientras Atlas no tenga sitio propio.
