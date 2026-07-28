@@ -53,7 +53,18 @@ logger = logging.getLogger(__name__)
 # constant was cached at import time and could go stale if a profile switch
 # happened after the first import.
 def get_memory_dir() -> Path:
-    """Return the profile-scoped memories directory."""
+    """Return the profile-scoped memories directory.
+
+    MUD integration: if ``ATLAS_MEMORY_ROOT`` is set, memory (MEMORY.md /
+    USER.md) is read/written under that directory instead of HERMES_HOME.
+    This lets Atlas point its memory at an external, unified vault (e.g. a
+    shared Obsidian-style memory shared across agents) without touching the
+    agent's home dir. Falls back to the profile-scoped default when unset, so
+    behavior is unchanged for standard installs.
+    """
+    root = os.environ.get("ATLAS_MEMORY_ROOT")
+    if root:
+        return Path(root).expanduser()
     return get_hermes_home() / "memories"
 
 # Stable header prefixes for the system-prompt memory blocks rendered by
