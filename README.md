@@ -23,18 +23,65 @@ Usás el modelo que quieras — OpenRouter, OpenAI, tu propio endpoint y muchos 
 
 ## Instalación (desde código)
 
-Atlas AI es un fork; se instala desde el repo. Requiere Python 3.11–3.13 y [uv](https://docs.astral.sh/uv/).
+Atlas AI se instala **desde el repo** (es un fork, no tiene instalador hosteado). El gestor de paquetes es [uv](https://docs.astral.sh/uv/), que se encarga de Python y las dependencias.
+
+**Requisitos:** Git y Python 3.11–3.13. El resto (Node.js, ripgrep, ffmpeg) lo bootstrapea `atlas postinstall`.
+
+### Linux / macOS
 
 ```bash
-git clone <tu-repo-de-atlas> "Atlas AI"
+# 1. uv (si no lo tenés)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# 2. Clonar e instalar
+git clone https://github.com/ubihard-droid/atlas-ai.git "Atlas AI"
 cd "Atlas AI"
 uv venv --python 3.11
 source .venv/bin/activate
 uv pip install -e ".[all]"
-atlas              # ¡a chatear!
+
+# 3. Dependencias no-Python (Node, ripgrep, ffmpeg) y a chatear
+atlas postinstall
+atlas
 ```
 
-> Docker: el repo trae `docker-compose.yml` y `Dockerfile`. Ajustá el branding antes de publicar imágenes.
+### Windows (PowerShell)
+
+```powershell
+# 1. uv (si no lo tenés)
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# 2. Clonar e instalar
+git clone https://github.com/ubihard-droid/atlas-ai.git "Atlas AI"
+cd "Atlas AI"
+uv venv --python 3.11
+.\.venv\Scripts\Activate.ps1
+uv pip install -e ".[all]"
+
+# 3. Dependencias no-Python y a chatear
+atlas postinstall
+atlas
+```
+
+> **Repo privado:** el `git clone` te va a pedir autenticación. Usá tu cuenta de GitHub (token o SSH). Si clonás en la misma máquina que ya tiene la clave configurada, andá con SSH: `git clone git@github.com:ubihard-droid/atlas-ai.git "Atlas AI"`.
+
+### Docker
+
+El repo trae `docker-compose.yml` y `Dockerfile`:
+
+```bash
+docker compose up -d --build
+```
+
+> Ajustá el branding de la imagen (`docker-compose.yml`) antes de publicar imágenes propias.
+
+### Actualizar
+
+```bash
+git pull                              # tus cambios de Atlas
+git pull upstream main                # traer mejoras del proyecto base (Hermes)
+uv pip install -e ".[all]"            # re-sincronizar dependencias
+```
 
 ---
 
