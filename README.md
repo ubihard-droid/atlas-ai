@@ -1,4 +1,8 @@
-# Atlas AI
+<p align="center">
+  <img src="assets/atlas-logo.png" alt="Atlas AI" width="420">
+</p>
+
+<h1 align="center">Atlas AI</h1>
 
 <p align="center">
   <a href="https://github.com/nousresearch/hermes-agent"><img src="https://img.shields.io/badge/Fork%20of-Hermes%20Agent-FFD700?style=for-the-badge" alt="Fork of Hermes Agent"></a>
